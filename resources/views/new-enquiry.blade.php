@@ -8,7 +8,7 @@
 ">
 <h3 style="color: #ffffff;">Hi Renewal Project,</h3>
 <h3 style="color: #ffffff;">
-    You have a message from the contact form:
+    You have a new contact form message:
 </h3>
 
 <table 
@@ -35,7 +35,11 @@
             <td colspan='2'>{{$request->enquiryEmail}}</td>
         </tr>
         <tr>
-            <td colspan='2'>Email:</td>
+            <td colspan='2'>Subject:</td>
+            <td colspan='2'>{{$request->subject}}</td>
+        </tr>
+        <tr>
+            <td colspan='2'>Enquiry:</td>
             <td colspan='2'>{{$request->enquiryData}}</td>
         </tr>
     </tbody>

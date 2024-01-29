@@ -24,7 +24,8 @@ class StoreEnquiry extends FormRequest
         return [
             'enquiryName' => 'required|string',
             'enquiryEmail' => 'required|email',
-            'enquiryData' => 'required|string'
+            'enquiryData' => 'required|string',
+            'subject' => 'required|string'
         ];
     }
 }
