@@ -25,7 +25,16 @@ class StoreEnquiry extends FormRequest
             'enquiryName' => 'required|string',
             'enquiryEmail' => 'required|email',
             'enquiryData' => 'required|string',
-            'subject' => 'required|string'
+            'subject' => 'required|string',
+            'newImage' => 'image|mimes:jpeg,jpg,png,webp|max:3000',
+        ];
+    }
+
+    public function messages() {
+        return [
+            'newImage.image' => 'Your uploaded file can only be of image type ',
+            'newImage.mimes' => 'Image must be of jpeg, jpg or png format ',
+            'newImage.max' => 'The image maximum size is 3MB! Please choose a smaller sized image.'
         ];
     }
 }

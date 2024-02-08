@@ -43,7 +43,10 @@
             <td colspan='2'>{{$request->enquiryData}}</td>
         </tr>
     </tbody>
-
+    @if ($request->newImage)
+        <p>there is an image</p>
+        <img src="{{ $message->embed((storage_path('/app/public/images/renewal-hub-enquires/logo.png'))) }}" width="150px" height="150px">
+    @endif
 </table>
 
 </body>
