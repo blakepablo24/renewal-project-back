@@ -12,13 +12,21 @@ class EnquiryController extends Controller
     public function newEnquiry(StoreEnquiry $Request)
     {
 
+        $image = "";
 
-        // if($Request->newImage){
-        //     $newSalonTreatment->image = Helper::imageUpdate($Request->newImage, '/images/renewal-hub-enquires/', ucwords($Request->title), false);
-        // } else {
-        //     $newSalonTreatment->image = "";
-        // }
-        Mail::to("new-enquiry@renewal-project.paulrobsondev.co.uk")->send(new NewEnquiry($Request));
+        if($Request->newImage){
+            $image = Helper::imageUpdate($Request->newImage, '/images/renewal-hub-enquires/', ucwords($Request->enquiryEmail.'-'), false);
+        }
+
+        $newEnquiryData = (object) [
+            'name' => $Request->enquiryName,
+            'email' => $Request->enquiryEmail,
+            'data' => $Request->enquiryData,
+            'subject' => $Request->subject,
+            'image' => $image
+          ];
+
+        Mail::to("new-enquiry@renewal-project.paulrobsondev.co.uk")->send(new NewEnquiry($newEnquiryData));
 
         return response()->json($Request);
     }

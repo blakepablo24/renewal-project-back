@@ -18,11 +18,11 @@ class NewEnquiry extends Mailable
      * Create a new message instance.
      */
 
-    public $request;
+    public $newEnquiryData;
 
-    public function __construct($request)
+    public function __construct($newEnquiryData)
     {
-        $this->request = $request;
+        $this->newEnquiryData = $newEnquiryData;
     }
 
     /**
@@ -32,7 +32,7 @@ class NewEnquiry extends Mailable
     {
         return new Envelope(
             subject: 'New Enquiry',
-            from: new Address('new-enquiry@renewal-project.paulrobsondev.co.uk', $this->request['enquiryName'])
+            from: new Address('new-enquiry@renewal-project.paulrobsondev.co.uk', $this->newEnquiryData->name)
         );
     }
 

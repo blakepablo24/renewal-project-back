@@ -38,8 +38,8 @@ class Helper
             }
         }
         $newFileName = $filename.'.webp';
-        $storagePath  = Storage::disk('public')->getDriver()->getAdapter()->getPathPrefix();
-        $output = $storagePath.$fileLocation.$newFileName;
+        $storagePath  = Storage::path('public');
+        $output = $storagePath.$fileLocation.'size-original-'.$newFileName;
         imagewebp($img,$output,100);
         $portrait = true;
         $width = imagesx($img);
@@ -48,17 +48,21 @@ class Helper
             $portrait = false;
         }
         $source = \Tinify\fromFile($output);
-        $resized = $source->resize(array(
-            "method" => "fit",
-            "width" => 500,
-            "height" => 500
-        ));
-        $resized->toFile($storagePath.$fileLocation.'small-'.$newFileName);
-        $source->toFile($storagePath.$fileLocation.$newFileName);
+
+        // Create Thumbnail of image too
+        // $resized = $source->resize(array(
+        //     "method" => "fit",
+        //     "width" => 500,
+        //     "height" => 500
+        // ));
+        // $resized->toFile($storagePath.$fileLocation.'size-small-'.$newFileName);
+        
+        $source->toFile($storagePath.$fileLocation.'size-large-'.$newFileName);
+        $finalImagefile = $storagePath.$fileLocation.'size-large-'.$newFileName;
         if($frontPageImage){
-            return ["filename" => $newFileName, "portrait" => $portrait];
+            return ["filename" => $finalImagefile, "portrait" => $portrait];
         } else {
-            return $newFileName;
+            return $finalImagefile;
         }
     }
 

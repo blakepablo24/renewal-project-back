@@ -28,24 +28,24 @@
     <tbody>
         <tr>
             <td colspan='2'>Name:</td>
-            <td colspan='2'>{{$request->enquiryName}}</td>
+            <td colspan='2'>{{$newEnquiryData->name}}</td>
         </tr>
         <tr>
             <td colspan='2'>Email:</td>
-            <td colspan='2'>{{$request->enquiryEmail}}</td>
+            <td colspan='2'>{{$newEnquiryData->email}}</td>
         </tr>
         <tr>
             <td colspan='2'>Subject:</td>
-            <td colspan='2'>{{$request->subject}}</td>
+            <td colspan='2'>{{$newEnquiryData->subject}}</td>
         </tr>
         <tr>
             <td colspan='2'>Enquiry:</td>
-            <td colspan='2'>{{$request->enquiryData}}</td>
+            <td colspan='2'>{{$newEnquiryData->data}}</td>
         </tr>
     </tbody>
-    @if ($request->newImage)
-        <p>there is an image</p>
-        <img src="{{ $message->embed((storage_path('/app/public/images/renewal-hub-enquires/logo.png'))) }}" width="150px" height="150px">
+    @if ($newEnquiryData->image)
+        <p>There is an image attached</p>
+        <img src="{{ $message->embed(($newEnquiryData->image)) }}" max-width="300px" height="300px">
     @endif
 </table>
 
