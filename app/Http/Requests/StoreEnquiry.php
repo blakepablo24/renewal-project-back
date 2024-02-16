@@ -26,15 +26,35 @@ class StoreEnquiry extends FormRequest
             'enquiryEmail' => 'required|email',
             'enquiryData' => 'required|string',
             'subject' => 'required|string',
-            'newImage' => 'image|mimes:jpeg,jpg,png,webp|max:3000',
+            'newImage1' => 'image|mimes:jpeg,jpg,png,webp|max:3000',
+            'newImage2' => 'image|mimes:jpeg,jpg,png,webp|max:3000',
+            'newImage3' => 'image|mimes:jpeg,jpg,png,webp|max:3000',
+            'newImage4' => 'image|mimes:jpeg,jpg,png,webp|max:3000',
+            'newImage5' => 'image|mimes:jpeg,jpg,png,webp|max:3000',
+            'newImage6' => 'image|mimes:jpeg,jpg,png,webp|max:3000',
         ];
     }
 
     public function messages() {
         return [
-            'newImage.image' => 'Your uploaded file can only be of image type ',
-            'newImage.mimes' => 'Image must be of jpeg, jpg or png format ',
-            'newImage.max' => 'The image maximum size is 3MB! Please choose a smaller sized image.'
+            'newImage1.image' => 'Your uploaded file can only be of image type ',
+            'newImage1.mimes' => 'Image must be of jpeg, jpg or png format ',
+            'newImage1.max' => 'The image maximum size is 3MB! Please choose a smaller sized image.',
+            'newImage2.image' => 'Your uploaded file can only be of image type ',
+            'newImage2.mimes' => 'Image must be of jpeg, jpg or png format ',
+            'newImage2.max' => 'The image maximum size is 3MB! Please choose a smaller sized image.',
+            'newImage3.image' => 'Your uploaded file can only be of image type ',
+            'newImage3.mimes' => 'Image must be of jpeg, jpg or png format ',
+            'newImage3.max' => 'The image maximum size is 3MB! Please choose a smaller sized image.',
+            'newImage4.image' => 'Your uploaded file can only be of image type ',
+            'newImage4.mimes' => 'Image must be of jpeg, jpg or png format ',
+            'newImage4.max' => 'The image maximum size is 3MB! Please choose a smaller sized image.',
+            'newImage5.image' => 'Your uploaded file can only be of image type ',
+            'newImage5.mimes' => 'Image must be of jpeg, jpg or png format ',
+            'newImage5.max' => 'The image maximum size is 3MB! Please choose a smaller sized image.',
+            'newImage6.image' => 'Your uploaded file can only be of image type ',
+            'newImage6.mimes' => 'Image must be of jpeg, jpg or png format ',
+            'newImage6.max' => 'The image maximum size is 3MB! Please choose a smaller sized image.'
         ];
     }
 }

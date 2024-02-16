@@ -43,9 +43,24 @@
             <td colspan='2'>{{$newEnquiryData->data}}</td>
         </tr>
     </tbody>
-    @if ($newEnquiryData->image)
+    @if ($newEnquiryData->image1)
         <p>There is an image attached</p>
-        <img src="{{ $message->embed(($newEnquiryData->image)) }}" max-width="300px" height="300px">
+        <img src="{{ $message->embed(($newEnquiryData->image1)) }}" max-width="300px" height="300px">
+    @endif
+    @if ($newEnquiryData->image2)
+        <img src="{{ $message->embed(($newEnquiryData->image2)) }}" max-width="300px" height="300px">
+    @endif
+    @if ($newEnquiryData->image3)
+        <img src="{{ $message->embed(($newEnquiryData->image3)) }}" max-width="300px" height="300px">
+    @endif
+    @if ($newEnquiryData->image4)
+        <img src="{{ $message->embed(($newEnquiryData->image4)) }}" max-width="300px" height="300px">
+    @endif
+    @if ($newEnquiryData->image5)
+        <img src="{{ $message->embed(($newEnquiryData->image5)) }}" max-width="300px" height="300px">
+    @endif
+    @if ($newEnquiryData->image6)
+        <img src="{{ $message->embed(($newEnquiryData->image6)) }}" max-width="300px" height="300px">
     @endif
 </table>
 
