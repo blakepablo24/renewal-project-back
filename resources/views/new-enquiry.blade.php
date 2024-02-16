@@ -56,12 +56,6 @@
     @if ($newEnquiryData->image4)
         <img src="{{ $message->embed(($newEnquiryData->image4)) }}" max-width="300px" height="300px">
     @endif
-    @if ($newEnquiryData->image5)
-        <img src="{{ $message->embed(($newEnquiryData->image5)) }}" max-width="300px" height="300px">
-    @endif
-    @if ($newEnquiryData->image6)
-        <img src="{{ $message->embed(($newEnquiryData->image6)) }}" max-width="300px" height="300px">
-    @endif
 </table>
 
 </body>
