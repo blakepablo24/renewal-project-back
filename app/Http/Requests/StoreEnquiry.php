@@ -26,10 +26,10 @@ class StoreEnquiry extends FormRequest
             'enquiryEmail' => 'required|email',
             'enquiryData' => 'required|string',
             'subject' => 'required|string',
-            'newImage1' => 'image|mimes:jpeg,jpg,png,webp|max:6000',
-            'newImage2' => 'image|mimes:jpeg,jpg,png,webp|max:6000',
-            'newImage3' => 'image|mimes:jpeg,jpg,png,webp|max:6000',
-            'newImage4' => 'image|mimes:jpeg,jpg,png,webp|max:6000'
+            'newImage1' => 'image|mimes:jpeg,jpg,png,webp|max:8000',
+            'newImage2' => 'image|mimes:jpeg,jpg,png,webp|max:8000',
+            'newImage3' => 'image|mimes:jpeg,jpg,png,webp|max:8000',
+            'newImage4' => 'image|mimes:jpeg,jpg,png,webp|max:8000'
         ];
     }
 
@@ -37,16 +37,16 @@ class StoreEnquiry extends FormRequest
         return [
             'newImage1.image' => 'Your uploaded file can only be of image type ',
             'newImage1.mimes' => 'Image must be of jpeg, jpg or png format ',
-            'newImage1.max' => 'The image maximum size is 5MB! Please choose a smaller sized image.',
+            'newImage1.max' => 'The image maximum size is 8MB! Please choose a smaller sized image.',
             'newImage2.image' => 'Your uploaded file can only be of image type ',
             'newImage2.mimes' => 'Image must be of jpeg, jpg or png format ',
-            'newImage2.max' => 'The image maximum size is 5MB! Please choose a smaller sized image.',
+            'newImage2.max' => 'The image maximum size is 8MB! Please choose a smaller sized image.',
             'newImage3.image' => 'Your uploaded file can only be of image type ',
             'newImage3.mimes' => 'Image must be of jpeg, jpg or png format ',
-            'newImage3.max' => 'The image maximum size is 5MB! Please choose a smaller sized image.',
+            'newImage3.max' => 'The image maximum size is 8MB! Please choose a smaller sized image.',
             'newImage4.image' => 'Your uploaded file can only be of image type ',
             'newImage4.mimes' => 'Image must be of jpeg, jpg or png format ',
-            'newImage4.max' => 'The image maximum size is 5MB! Please choose a smaller sized image.',
+            'newImage4.max' => 'The image maximum size is 8MB! Please choose a smaller sized image.',
         ];
     }
 }

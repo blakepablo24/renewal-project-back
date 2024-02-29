@@ -12,6 +12,31 @@ class Helper
         
         $uploadedImage = imagecreatefromstring(file_get_contents($image));
 
+        // orientate the image
+        if (function_exists('exif_read_data')) {
+            $exif = exif_read_data($image);
+            if($exif && isset($exif['Orientation'])) {
+                $orientation = $exif['Orientation'];
+                if($orientation != 1){
+                    $deg = 0;
+                    switch ($orientation) {
+                    case 3:
+                        $deg = 180;
+                        break;
+                    case 6:
+                        $deg = 270;
+                        break;
+                    case 8:
+                        $deg = 90;
+                        break;
+                    }
+                    if ($deg) {
+                        $uploadedImage = imagerotate($uploadedImage, $deg, 0);        
+                    }
+                }
+            }
+        }
+
         $filename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
 
         if($name) {
@@ -20,7 +45,7 @@ class Helper
 
         $finalImagefileLocation = $storagePath . $fileLocation . $filename . '.webp';
 
-        imagewebp($uploadedImage,$finalImagefileLocation,100);
+        imagewebp($uploadedImage,$finalImagefileLocation,30);
 
         return $finalImagefileLocation;
     }

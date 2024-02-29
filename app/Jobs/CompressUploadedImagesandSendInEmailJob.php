@@ -36,21 +36,21 @@ class CompressUploadedImagesandSendInEmailJob implements ShouldQueue
     public function handle()
     {
 
-        if($this->newEnquiryData->image1){
-            Helper::imageUpdate($this->newEnquiryData->image1);
-        }
+        // if($this->newEnquiryData->image1){
+        //     Helper::imageUpdate($this->newEnquiryData->image1);
+        // }
 
-        if($this->newEnquiryData->image2){
-            Helper::imageUpdate($this->newEnquiryData->image2);
-        }
+        // if($this->newEnquiryData->image2){
+        //     Helper::imageUpdate($this->newEnquiryData->image2);
+        // }
 
-        if($this->newEnquiryData->image3){
-            Helper::imageUpdate($this->newEnquiryData->image3);
-        }
+        // if($this->newEnquiryData->image3){
+        //     Helper::imageUpdate($this->newEnquiryData->image3);
+        // }
 
-        if($this->newEnquiryData->image4){
-            Helper::imageUpdate($this->newEnquiryData->image4);
-        }
+        // if($this->newEnquiryData->image4){
+        //     Helper::imageUpdate($this->newEnquiryData->image4);
+        // }
 
 
         Mail::to("new-enquiry@renewal-project.paulrobsondev.co.uk")->send(new NewEnquiry($this->newEnquiryData));
