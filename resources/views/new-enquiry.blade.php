@@ -8,7 +8,7 @@
 ">
 <h3 style="color: #ffffff;">Hi Renewal Project,</h3>
 <h3 style="color: #ffffff;">
-    You have a new contact form message:
+    You have a new {{$newEnquiryData->subject}} message:
 </h3>
 
 <table 
@@ -38,10 +38,37 @@
             <td colspan='2'>Subject:</td>
             <td colspan='2'>{{$newEnquiryData->subject}}</td>
         </tr>
-        <tr>
-            <td colspan='2'>Enquiry:</td>
-            <td colspan='2'>{{$newEnquiryData->data}}</td>
-        </tr>
+        @if ($newEnquiryData->transportService)
+            <tr>
+                <td colspan='2'>Transport Service:</td>
+                <td colspan='2'>{{$newEnquiryData->transportService}}</td>
+            </tr>
+            <tr>
+                <td colspan='2'>Collection Address</td>
+                <td colspan='2'>{{$newEnquiryData->collectionAddress}}</td>
+            </tr>
+            @if ($newEnquiryData->deliveryAddress)
+                <tr>
+                    <td colspan='2'>Delivery Address</td>
+                    <td colspan='2'>{{$newEnquiryData->deliveryAddress}}</td>
+                </tr>
+            @endif    
+            <tr>
+                <td colspan='2'>Date:</td>
+                <td colspan='2'>{{$newEnquiryData->date}}</td>
+            </tr>
+        @endif
+        @if ($newEnquiryData->transportService)
+            <tr>
+                <td colspan='2'>Items to move</td>
+                <td colspan='2'>{{$newEnquiryData->data}}</td>
+            </tr>
+        @else
+            <tr>
+                <td colspan='2'>Enquiry</td>
+                <td colspan='2'>{{$newEnquiryData->data}}</td>
+            </tr>
+        @endif
     </tbody>
     @if ($newEnquiryData->image1)
         <p>There is an image attached</p>
