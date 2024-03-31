@@ -33,14 +33,15 @@ class EnquiryController extends Controller
         }
 
         $newEnquiryData = (object) [
-            'name' => $Request->enquiryName,
-            'email' => $Request->enquiryEmail,
-            'data' => $Request->enquiryData,
+            'enquiryName' => $Request->enquiryName,
+            'enquiryEmail' => $Request->enquiryEmail,
+            'enquiryPhone' => $Request->enquiryPhone,
+            'enquiryData' => $Request->enquiryData,
             'subject' => $Request->subject,
             'transportService' => $Request->transportService,
-            'collectionAddress' => $Request->enquiryCollectionAddress,
-            'deliveryAddress' => $Request->enquiryDeliveryAddress,
-            'date' => $Request->enquiryDate,
+            'enquiryCollectionAddress' => $Request->enquiryCollectionAddress,
+            'enquiryDeliveryAddress' => $Request->enquiryDeliveryAddress,
+            'enquiryDate' => $Request->enquiryDate,
             'image1' => $image1,
             'image2' => $image2,
             'image3' => $image3,

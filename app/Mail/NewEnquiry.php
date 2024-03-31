@@ -32,7 +32,7 @@ class NewEnquiry extends Mailable
     {
         return new Envelope(
             subject: 'New Enquiry',
-            from: new Address('new-enquiry@renewal-project.paulrobsondev.co.uk', $this->newEnquiryData->name)
+            from: new Address('new-enquiry@renewal-project.paulrobsondev.co.uk', $this->newEnquiryData->enquiryName)
         );
     }
 

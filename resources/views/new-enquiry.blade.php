@@ -28,11 +28,15 @@
     <tbody>
         <tr>
             <td colspan='2'>Name:</td>
-            <td colspan='2'>{{$newEnquiryData->name}}</td>
+            <td colspan='2'>{{$newEnquiryData->enquiryName}}</td>
         </tr>
         <tr>
             <td colspan='2'>Email:</td>
-            <td colspan='2'>{{$newEnquiryData->email}}</td>
+            <td colspan='2'>{{$newEnquiryData->enquiryEmail}}</td>
+        </tr>
+        <tr>
+            <td colspan='2'>Phone:</td>
+            <td colspan='2'>{{$newEnquiryData->enquiryPhone}}</td>
         </tr>
         <tr>
             <td colspan='2'>Subject:</td>
@@ -45,28 +49,28 @@
             </tr>
             <tr>
                 <td colspan='2'>Collection Address</td>
-                <td colspan='2'>{{$newEnquiryData->collectionAddress}}</td>
+                <td colspan='2'>{{$newEnquiryData->enquiryCollectionAddress}}</td>
             </tr>
             @if ($newEnquiryData->deliveryAddress)
                 <tr>
                     <td colspan='2'>Delivery Address</td>
-                    <td colspan='2'>{{$newEnquiryData->deliveryAddress}}</td>
+                    <td colspan='2'>{{$newEnquiryData->enquiryDeliveryAddress}}</td>
                 </tr>
             @endif    
             <tr>
                 <td colspan='2'>Date:</td>
-                <td colspan='2'>{{$newEnquiryData->date}}</td>
+                <td colspan='2'>{{$newEnquiryData->enquiryDate}}</td>
             </tr>
         @endif
         @if ($newEnquiryData->transportService)
             <tr>
                 <td colspan='2'>Items to move</td>
-                <td colspan='2'>{{$newEnquiryData->data}}</td>
+                <td colspan='2'>{{$newEnquiryData->enquiryData}}</td>
             </tr>
         @else
             <tr>
                 <td colspan='2'>Enquiry</td>
-                <td colspan='2'>{{$newEnquiryData->data}}</td>
+                <td colspan='2'>{{$newEnquiryData->enquiryData}}</td>
             </tr>
         @endif
     </tbody>
