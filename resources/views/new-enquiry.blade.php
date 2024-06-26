@@ -51,7 +51,7 @@
                 <td colspan='2'>Collection Address</td>
                 <td colspan='2'>{{$newEnquiryData->enquiryCollectionAddress}}</td>
             </tr>
-            @if ($newEnquiryData->deliveryAddress)
+            @if ($newEnquiryData->enquiryDeliveryAddress)
                 <tr>
                     <td colspan='2'>Delivery Address</td>
                     <td colspan='2'>{{$newEnquiryData->enquiryDeliveryAddress}}</td>
